@@ -1,7 +1,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
-    background: #f3f3f3;
+    background: white;
 }
 
 .pad {
@@ -54,4 +54,30 @@ textarea {
 
 .navbar-light .navbar-nav .nav-link {
     color: white;
+}
+
+/* Containers */
+.container {
+    padding: 5px;
+    background-color: #d2d2d2;
+    border-radius: 25px;
+    border-style: none;
+    max-width: 300px !important;
+}
+
+.blue-container {
+    align-content: center !important;
+    padding: 5px;
+    background-color: #e8f4f8 !important;
+    border-radius: 25px;
+    max-width: 400px !important;
+    margin-right: auto;
+    margin-left: auto;
+    border-color: blue !important; 
+    border: 5px;
+}
+
+.centered {
+    display: block;
+    text-align: center;
 }
