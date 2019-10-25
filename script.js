@@ -2,7 +2,7 @@
 let app = new Vue({
     el: '#app',
     data: {
-        currRange : '2',
+        currRange: '2',
         values: {
             studentName: ' ',
             studentNumber: '',
@@ -17,9 +17,20 @@ let app = new Vue({
             try {
                 /* global axios*/
                 const spreadsheetId = "1XS4E90X96Xha5E-8EypzasCaZFgrYlB7k5BETygKgZw";
-                const range = this.currRange + "1:" + this.currRange + "" ;
-                const url = "https://sheets.googleapis.com/v4/spreadsheets/" + spreadsheetId + "/values/" + range;
-                const response = await axios.post(url);
+                const range = "Sheet1!A" + this.currRange + ":F" + this.currRange;
+                const api = "?key=AIzaSyDzYEixKRQ4pmCtTm_i6yLdVtBRhwZ6Wcs";
+                const inputOption = "?valueInputOption=RAW"
+                
+                const res = await axios.get();
+                const scope = "https://www.googleapis.com/auth/spreadsheets"
+                const redirect = "url of website"
+
+
+                //var url = "https://cors-anywhere.herokuapp.com";
+                var url = "https://sheets.googleapis.com/v4/spreadsheets/" + spreadsheetId + "/values/" + range + inputOption;
+
+                const response = await axios.put(url, this.values);
+
                 console.log(response)
                 this.currRange = this.currRange + 1
             }
